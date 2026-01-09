@@ -5,6 +5,15 @@ const { SharpApiCoreService, SharpApiJobTypeEnum } = require('@sharpapi/sharpapi
  */
 class SharpApiDetectSpamService extends SharpApiCoreService {
   /**
+   * Creates a new SharpApiDetectSpamService instance
+   * @param {string} apiKey - Your SharpAPI API key
+   * @param {string} [apiBaseUrl='https://sharpapi.com/api/v1'] - API base URL
+   */
+  constructor(apiKey, apiBaseUrl = 'https://sharpapi.com/api/v1') {
+    super(apiKey, apiBaseUrl, '@sharpapi/sharpapi-node-detect-spam/1.0.1');
+  }
+
+  /**
    * Parses the provided text for any possible spam content.
    *
    * @param {string} text
